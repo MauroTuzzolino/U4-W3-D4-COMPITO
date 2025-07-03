@@ -6,6 +6,8 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "tipo_evento_specifico")
 public class Evento {
 
     @Id
