@@ -3,13 +3,17 @@
              xmlns="http://xmlns.jcp.org/xml/ns/persistence"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
     <persistence-unit name="gestioneeventi">
-        
+
         <class>maurotuzzolino.entities.Evento</class>
         <class>maurotuzzolino.entities.Location</class>
         <class>maurotuzzolino.entities.Persona</class>
         <class>maurotuzzolino.entities.Partecipazione</class>
         <class>maurotuzzolino.entities.TipoEvento</class>
         <class>maurotuzzolino.entities.StatoPartecipazione</class>
+        <class>maurotuzzolino.entities.PartitaDiCalcio</class>
+        <class>maurotuzzolino.entities.GaraDiAtletica</class>
+        <class>maurotuzzolino.entities.Concerto</class>
+        <class>maurotuzzolino.entities.GenereConcerto</class>
 
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/gestioneeventi"/>
