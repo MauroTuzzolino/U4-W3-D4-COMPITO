@@ -2,10 +2,22 @@ package maurotuzzolino.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 
 import java.time.LocalDate;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(
+                name = "PartitaDiCalcio.getPartiteVinteInCasa",
+                query = "SELECT p FROM PartitaDiCalcio p WHERE p.squadraDiCasa = :squadra AND p.squadraVincente = :squadra"
+        ),
+        @NamedQuery(
+                name = "PartitaDiCalcio.getPartiteVinteInTrasferta",
+                query = "SELECT p FROM PartitaDiCalcio p WHERE p.squadraOspite = :squadra AND p.squadraVincente = :squadra"
+        )
+})
 public class PartitaDiCalcio extends Evento {
 
     @Column(nullable = false)

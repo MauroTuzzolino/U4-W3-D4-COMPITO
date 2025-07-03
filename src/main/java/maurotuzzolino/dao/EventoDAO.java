@@ -6,6 +6,7 @@ import jakarta.persistence.TypedQuery;
 import maurotuzzolino.entities.Concerto;
 import maurotuzzolino.entities.Evento;
 import maurotuzzolino.entities.GenereConcerto;
+import maurotuzzolino.entities.PartitaDiCalcio;
 
 import java.util.List;
 
@@ -40,5 +41,17 @@ public class EventoDAO {
                 "SELECT c FROM Concerto c WHERE c.genere = :genere", Concerto.class);
         query.setParameter("genere", genere);
         return query.getResultList();
+    }
+
+    public List<PartitaDiCalcio> getPartiteVinteInCasa(String squadra) {
+        return entityManager.createNamedQuery("PartitaDiCalcio.getPartiteVinteInCasa", PartitaDiCalcio.class)
+                .setParameter("squadra", squadra)
+                .getResultList();
+    }
+
+    public List<PartitaDiCalcio> getPartiteVinteInTrasferta(String squadra) {
+        return entityManager.createNamedQuery("PartitaDiCalcio.getPartiteVinteInTrasferta", PartitaDiCalcio.class)
+                .setParameter("squadra", squadra)
+                .getResultList();
     }
 }
